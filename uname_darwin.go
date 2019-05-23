@@ -1,65 +1,29 @@
-// +build darwin
+// +darwin
 
 package main
 
 import (
-	"errors"
 	"fmt"
 	"log"
 	"os/exec"
 	"strings"
 )
 
-// Uname ...
+// Uname ... Darwin
 type Uname struct {
 	kernel  string
 	release string
 	machine string
+	dm      *DarwinMeta
 }
 
 func (u *Uname) String() string {
-	return fmt.Sprintf("&Uname{kernel: %s, release: %s, machine: %s}", u.kernel, u.release, u.machine)
+	return fmt.Sprintf("&Uname{kernel: %s, release: %s, machine: %s, dm: %v}", u.kernel, u.release, u.machine, u.dm)
 }
 
-func processUname(b []byte) ([]string, error) {
-	s := string(b)
-	s = strings.TrimRight(s, "\r\n")
-	out := strings.Split(s, " ")
-	if len(out) != 3 {
-		return nil, errors.New("Uname: length of uname output was not 3")
-	}
-	return out, nil
-}
-
-// NewUname ...
-func NewUname() *Uname {
-	// handles Darwin, write something to handle nix.
-	b, err := exec.Command("uname", "-srm").Output()
-	if err != nil {
-		log.Fatal(err)
-	}
-	un, err := processUname(b)
-	if err != nil {
-		log.Fatal(err)
-	}
-	// check if osx again
-	return &Uname{un[0], un[1], un[2]}
-}
-
-// Core ...
-type Core struct {
-	Uname *Uname
-}
-
-// CoreGen ...
-func CoreGen() *Core {
-	return &Core{
-		Uname: NewUname(),
-	}
-}
-
-func (c *Core) String() string {
-	return fmt.Sprintf("&Core{Uname: %v}", c.Uname)
+// PlatformUname ... Darwin Specific implementation
+func PlatformUname(meta []string) *Uname {
+	return &Uname{meta[0], meta[1], meta[2], NewDarwinMeta()}
 }
 
 // DarwinMeta ...

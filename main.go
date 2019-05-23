@@ -3,6 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	m := NewDarwinMeta()
+	m := CoreGen()
 	fmt.Println(m)
 }
