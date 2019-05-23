@@ -1,5 +1,5 @@
 // +linux
-package main
+package uname
 
 import (
 	"fmt"

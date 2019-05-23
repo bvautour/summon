@@ -1,6 +1,6 @@
 // +darwin
 
-package main
+package uname
 
 import (
 	"fmt"

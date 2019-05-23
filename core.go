@@ -2,17 +2,19 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/bvautour/summon/uname"
 )
 
 // Core ...
 type Core struct {
-	Uname *Uname
+	Uname *uname.Uname
 }
 
 // CoreGen ...
 func CoreGen() *Core {
 	return &Core{
-		Uname: NewUname(),
+		Uname: uname.NewUname(),
 	}
 }
 
