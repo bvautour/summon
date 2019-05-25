@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/bvautour/summon/uname"
+	"github.com/bvautour/summon/pkg/uname"
 )
 
 // Core ...
