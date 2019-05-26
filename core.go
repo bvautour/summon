@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/bvautour/summon/pkg/uname"
 )
@@ -13,8 +14,12 @@ type Core struct {
 
 // CoreGen ...
 func CoreGen() *Core {
+	un, err := uname.NewUname()
+	if err != nil {
+		log.Fatal(err)
+	}
 	return &Core{
-		Uname: uname.NewUname(),
+		Uname: un,
 	}
 }
 
