@@ -1,2 +1,4 @@
+github.com/bvautour/summon/pkg/hue v0.0.0-20190526013715-fb7037c0cfde h1:DrdLGdu2cjAYspjMfz53ia/UokXTQdtC5ul851/WfD0=
+github.com/bvautour/summon/pkg/hue v0.0.0-20190526013715-fb7037c0cfde/go.mod h1:CgplkHiTtLAEwLhXGQd9l2LfEJ/abcwVRe4oEB5+94c=
 github.com/bvautour/summon/pkg/uname v0.0.0-20190525135108-daf817e962b7 h1:xW3lOYb7Uuy9dVE5YehRp5W4SW0KzCf1G1AQvh9s4fA=
 github.com/bvautour/summon/pkg/uname v0.0.0-20190525135108-daf817e962b7/go.mod h1:7q4THCrgtJmCyvZg1lULnSSU6QKLh1FO7P+1MtXFSPQ=
